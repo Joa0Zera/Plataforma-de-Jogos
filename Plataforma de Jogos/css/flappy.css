@@ -1,0 +1,89 @@
+.game-container {
+    text-align: center;
+    margin: 100px auto 60px;
+    padding: 0 20px;
+    max-width: 800px;
+}
+
+.game-title {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, var(--tech-blue), var(--neon-green));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+}
+
+.game-subtitle {
+    color: var(--tech-blue);
+    margin-bottom: 20px;
+}
+
+#game {
+    background: var(--code-bg);
+    border: 2px solid var(--tech-blue);
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 0 20px rgba(0, 168, 255, 0.3);
+}
+
+#score {
+    font-size: 24px;
+    margin: 15px 0;
+    color: var(--neon-green);
+    font-weight: bold;
+}
+
+#start {
+    padding: 12px 30px;
+    font-size: 16px;
+    background: linear-gradient(135deg, var(--tech-blue), var(--tech-purple));
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 168, 255, 0.4);
+}
+
+#start:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 168, 255, 0.6);
+}
+
+.code-particle {
+    position: absolute;
+    color: rgba(0, 168, 255, 0.2);
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+@media (max-width: 480px) {
+    #game {
+        width: 100%;
+        height: 500px;
+    }
+    
+    .game-title {
+        font-size: 2rem;
+    }
+    
+    #start {
+        width: 80%;
+        padding: 15px 0;
+    }
+}

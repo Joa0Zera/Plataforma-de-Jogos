@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogo Troca Palavras - DevGames</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/palavra.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html">TechGames</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="velha.html">Jogo Da Velha</a></li>
+                <li><a href="forca.html">Jogo da Forca</a></li>
+                <li><a href="flappy.html">Flappy Dev</a></li>
+                <li><a href="palavra.html">Troca Palavra</a></li>
+            </ul>
+        </nav>
+        <div class="header-buttons">
+            <button class="theme-switcher">🌓</button>
+        </div>
+    </div>
+</header>
+
+  <main class="container">
+    <section class="game-container">
+      <h1>Jogo Troca Palavras</h1>
+      <h3>Troque os Termos Tecnológicos abaixo</h3>
+
+      <div class="movie-list">
+        <p>O sistema operacional <strong>Windows</strong></p>
+        <p>A linguagem de programação <strong>Python</strong></p>
+        <p>O protocolo de internet <strong>HTTP</strong></p>
+        <p>O banco de dados <strong>MySQL</strong></p>
+        <p>O framework <strong>React</strong></p>
+      </div>
+
+      <div class="container">
+        <input type="text" id="palavra" placeholder="Digite um termo de TI..." />
+        <br /><br />
+        <button onclick="TrocarPalavra()">Substituir Termos</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-logo"><a href="index.html">TechGames</a></div>
+      <div class="footer-links">
+        <div class="footer-section">
+          <h3>Jogos</h3>
+          <ul>
+            <li><a href="forca.html">Forca</a></li>
+            <li><a href="flappy.html">Flappy</a></li>
+            <li><a href="palavra.html">Troca Palavra</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Links</h3>
+          <ul>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-icon">📧 Email</a>
+        <a href="#" class="social-icon">🐙 GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 DevGames. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script>
+    function TrocarPalavra() {
+      var palavraDigitada = document.getElementById("palavra").value.trim();
+      if (palavraDigitada === "") {
+        alert("Por favor, digite um termo de TI!");
+        return;
+      }
+      var termos = document.getElementsByTagName("strong");
+      for (let i = 0; i < termos.length; i++) {
+        termos[i].innerText = palavraDigitada;
+      }
+    }
+
+    const avatarMap = {
+      frontend: 'images/dev_frontend.png',
+      backend: 'images/dev_backend.png',
+      fullstack: 'images/dev_fullstack.png',
+      cyber: 'images/dev_cyber.png'
+  };
+
+  const savedCharacter = localStorage.getItem('selectedCharacter');
+  const avatarImg = document.getElementById('avatarDisplay');
+
+  if (savedCharacter && avatarMap[savedCharacter] && avatarImg) {
+      avatarImg.src = avatarMap[savedCharacter];
+      avatarImg.alt = savedCharacter + ' Dev';
+  }
+  </script>
+</body>
+</html>

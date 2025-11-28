@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Dev</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/flappy.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        #avatarDisplay {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #0ff;
+            z-index: 999;
+            background-color: #000;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <img id="avatarDisplay" src="" alt="Dev" />
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">TechGames</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="velha.html">Jogo Da Velha</a></li>
+                    <li><a href="forca.html">Jogo da Forca</a></li>
+                    <li><a href="flappy.html">Flappy Dev</a></li>
+                    <li><a href="palavra.html">Troca Palavra</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <button class="theme-switcher">🌓</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="game-container">
+        <h1 class="game-title">Flappy Dev</h1>
+        <p class="game-subtitle">Desvie dos bugs e colete commits!</p>
+        <canvas id="game" width="400" height="600"></canvas>
+        <p id="score">SCORE: 0</p>
+        <button id="start">START</button>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html">TechGames</a>
+            </div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Jogos</h3>
+                    <ul>
+                        <li><a href="velha.html">Code vs Bug</a></li>
+                        <li><a href="forca.html">Debug Challenge</a></li>
+                        <li><a href="flappy.html">Flappy Dev</a></li>
+                        <li><a href="palavra.html">Code Scramble</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Sobre</h3>
+                    <ul>
+                        <li><a href="#">Desenvolvedor</a></li>
+                        <li><a href="#">Tecnologias</a></li>
+                        <li><a href="#">Repositório</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon">GitHub</a>
+                <a href="#" class="social-icon">LinkedIn</a>
+                <a href="#" class="social-icon">Portfólio</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 TechGames. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/flappy.js"></script>
+    <script>
+        document.querySelector('.theme-switcher').addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            const isLight = document.body.classList.contains('light-theme');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-theme');
+        }
+
+        const avatarMap = {
+            frontend: 'images/dev_frontend.png',
+            backend: 'images/dev_backend.png',
+            fullstack: 'images/dev_fullstack.png',
+            cyber: 'images/dev_cyber.png'
+        };
+
+        const savedCharacter = localStorage.getItem('selectedCharacter');
+        const avatarImg = document.getElementById('avatarDisplay');
+
+        if (savedCharacter && avatarMap[savedCharacter] && avatarImg) {
+            avatarImg.src = avatarMap[savedCharacter];
+            avatarImg.alt = savedCharacter + ' Dev';
+        }
+    </script>
+</body>
+</html>

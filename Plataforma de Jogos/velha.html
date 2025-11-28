@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha Tech </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="css/velha.css">
+    <script src="js/jscript.js" defer></script>
+</head>
+<body>
+    <header class="main-header">
+      <div class="container header-container">
+        <div class="logo">Tech<span class="highlight">Games</span></div>
+        <nav class="nav-menu">
+          <a href="index.html">Code vs Bug</a>
+          <a href="index.html">Debug Challenge</a>
+          <a href="index.html" class="active">Flappy Dev</a>
+          <a href="index.html">Code Scramble</a>
+        </nav>
+        <div class="theme-toggle">
+          <span class="emoji">🌓</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="background-overlay"></div>
+
+    <div class="container">
+      <header class="header">
+        <h1 class="title"><span class="tech-text">PROGRAMADOR VS BUG</span></h1>
+        <div class="subtitle">
+          <span class="player-x">PROGRAMADOR <span class="symbol"><img src="images/codigo.png" alt="Code" class="symbol"></span></span> 
+          vs 
+          <span class="player-o">BUG <span class="symbol"><img src="images/bug.png" alt="Bug" class="symbol"></span></span>
+        </div>
+        <div class="current-player">
+          <span id="currentPlayer">VEZ DO: PROGRAMADOR</span>
+        </div>
+      </header>
+
+      <main class="game-container">
+        <div id="jogo">
+        </div>
+
+        <div class="game-controls">
+          <div id="resultado">
+            <p id="resposta">ESCOLHA UMA CASA PARA COMEÇAR</p>
+          </div>
+          
+          <div class="scoreboard">
+            <div class="score x-score">
+              <span class="score-label">PROGRAMADOR:</span>
+              <span id="xis" class="score-value">0</span>
+            </div>
+            <div class="score ties">
+              <span class="score-label">EMPATES:</span>
+              <span id="velha" class="score-value">0</span>
+            </div>
+            <div class="score o-score">
+              <span class="score-label">BUG:</span>
+              <span id="bola" class="score-value">0</span>
+            </div>
+          </div>
+
+          <button id="btnNovo" class="btn-new-game">
+            <span class="btn-icon">↻</span>
+            <span class="btn-text">NOVO JOGO</span>
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <footer class="main-footer">
+      <div class="footer-top">
+        <div class="footer-logo">Tech<span class="highlight">Games</span></div>
+    
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h4>Jogos</h4>
+            <ul>
+              <li><a href="velha.html">Code vs Bug</a></li>
+              <li><a href="debug.html">Debug Challenge</a></li>
+              <li><a href="flappy.html">Flappy Dev</a></li>
+              <li><a href="scramble.html">Code Scramble</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Sobre</h4>
+            <ul>
+              <li><a href="#">Desenvolvedor</a></li>
+              <li><a href="#">Tecnologias</a></li>
+              <li><a href="#">Repositório</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Social</h4>
+            <ul>
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Portfólio</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+      <div class="footer-bottom">
+        <p>© 2023 TechGames. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+</body>
+</html>

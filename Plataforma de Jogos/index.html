@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechGames Portal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">TechGames</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="velha.html">Jogo Da Velha</a></li>
+                    <li><a href="forca.html">Jogo da Forca</a></li>
+                    <li><a href="flappy.html">Flappy Dev</a></li>
+                    <li><a href="palavra.html">Troca Palavra</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <button class="theme-switcher">🌓</button>
+                <div class="header-avatar">
+                    <img id="avatarDisplay" src="" alt="Dev Avatar" />
+                  </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="main-title">TechGames Portal</h1>
+        <p class="subtitle">Jogos para desenvolvedores e entusiastas de tecnologia</p>
+        
+        <div class="games-grid">
+            <a href="velha.html" class="game-card">
+                <img src="images/JogoDaVelha.png" alt="Jogo da Velha">
+                <h2>Jogo da Velha</h2>
+                <p>O clássico jogo da velha com temática de programação</p>
+            </a>
+            
+            <a href="forca.html" class="game-card">
+                <img src="images/JogoDaForca.png" alt="Jogo da Forca">
+                <h2>Jogo da Forca</h2>
+                <p>Encontre os bugs no código antes que seja tarde!</p>
+            </a>
+            
+            <a href="flappy.html" class="game-card">
+                <img src="images/FlappyDev.png" alt="Flappy Bird">
+                <h2>Flappy Dev</h2>
+                <p>Desvie dos bugs e colete pontos de commit</p>
+            </a>
+            
+            <a href="palavra.html" class="game-card">
+                <img src="images/JogoTrocaPalavras.png" alt="Troca Palavra">
+                <h2>Troca Palavras</h2>
+                <p>Monte os comandos corretos para vencer</p>
+            </a>
+        </div>
+    </div>
+    <section class="character-selection">
+        <h2 class="section-title">Escolha seu Dev</h2>
+        <p class="section-subtitle">Cada personagem representa um estilo único de programador!</p>
+        <div class="character-card" data-character="frontend">
+            <img src="images/desenvolvedor 1.png" alt="Frontend Dev">
+            <h3>Frontend Dev</h3>
+            <p>Rápido, criativo e estiloso com animações e interfaces.</p>
+        </div>
+        <div class="character-card" data-character="backend">
+            <img src="images/desenvolvedor 2.png" alt="Backend Dev">
+            <h3>Backend Dev</h3>
+            <p>Poderoso no servidor, lida com lógica, banco e APIs.</p>
+        </div>
+        <div class="character-card" data-character="fullstack">
+            <img src="images/desenvolvedor 3.png" alt="Fullstack Dev">
+            <h3>Fullstack Dev</h3>
+            <p>Equilibrado em tudo, domina o front e o back!</p>
+        </div>
+        <div class="character-card" data-character="cyber">
+            <img src="images/desenvolvedor 4.png" alt="Cyber Dev">
+            <h3>Cyber Dev</h3>
+            <p>Expert em segurança, hacks e terminal sombrio.</p>
+        </div>
+        
+    </section>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html">TechGames</a>
+            </div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Jogos</h3>
+                    <ul>
+                        <li><a href="velha.html">Code vs Bug</a></li>
+                        <li><a href="forca.html">Debug Challenge</a></li>
+                        <li><a href="flappy.html">Flappy Dev</a></li>
+                        <li><a href="palavra.html">Code Scramble</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Sobre</h3>
+                    <ul>
+                        <li><a href="#">Desenvolvedor</a></li>
+                        <li><a href="#">Tecnologias</a></li>
+                        <li><a href="#">Repositório</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon">GitHub</a>
+                <a href="#" class="social-icon">LinkedIn</a>
+                <a href="#" class="social-icon">Portfólio</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 TechGames. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.theme-switcher').addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            const isLight = document.body.classList.contains('light-theme');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+    
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    
+        const avatarMap = {
+            frontend: 'images/desenvolvedor 1.png',
+            backend: 'images/desenvolvedor 2.png',
+            fullstack: 'images/desenvolvedor 3.png',
+            cyber: 'images/desenvolvedor 4.png'
+        };
+    
+        function updateHeaderAvatar(characterKey) {
+            const avatarImg = document.getElementById('avatarDisplay');
+            if (avatarMap[characterKey]) {
+                avatarImg.src = avatarMap[characterKey];
+                avatarImg.alt = characterKey + ' Dev';
+                avatarImg.style.display = 'inline-block';
+            }
+        }
+        
+    
+        const characterCards = document.querySelectorAll('.character-card');
+        const savedCharacter = localStorage.getItem('selectedCharacter');
+    
+        characterCards.forEach(card => {
+            const charKey = card.getAttribute('data-character');
+    
+            if (savedCharacter === charKey) {
+                card.classList.add('selected');
+            }
+    
+            card.addEventListener('click', () => {
+                characterCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+    
+                localStorage.setItem('selectedCharacter', charKey);
+                updateHeaderAvatar(charKey);
+            });
+        });
+    
+        if (savedCharacter) {
+            updateHeaderAvatar(savedCharacter);
+        }
+    </script>    
+</body>
+</html>
